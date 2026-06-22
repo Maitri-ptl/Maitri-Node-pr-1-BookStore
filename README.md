@@ -53,30 +53,6 @@ A complete demonstration of the project can be found below:
 
 ## 📸 Screenshots
 
-### Home / API Overview
-
-*(Add Screenshot Here)*
-
-### Book APIs
-
-*(Add Screenshot Here)*
-
-### User Registration
-
-*(Add Screenshot Here)*
-
-### User Login
-
-*(Add Screenshot Here)*
-
-### Database Records
-
-*(Add Screenshot Here)*
-
-### API Testing (Postman)
-
-*(Add Screenshot Here)*
-
 ---
 
 ## 📂 API Endpoints
