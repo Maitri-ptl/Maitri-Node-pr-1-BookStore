@@ -15,7 +15,13 @@ const userSchema = new mongoose.Schema({
         type : String,
         required : true,
         select : false
+    },
+    confirmPassword : {
+        type : String,
+        required : true,
+        select : false
     }
+
 })
 
 const User = mongoose.model('User',userSchema)

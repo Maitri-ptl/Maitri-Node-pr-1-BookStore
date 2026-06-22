@@ -17,7 +17,7 @@ const validation = [
         .isLength({min : 8})
         .withMessage("Password must be of 8 character.")
         .isStrongPassword()
-        .withMessage("Please enter Strong Password.."),
+        .withMessage("Please enter Strong Password..")
 ]
 
 export default validation;
