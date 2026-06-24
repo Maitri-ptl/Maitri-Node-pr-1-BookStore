@@ -57,8 +57,21 @@ export const loginUser = async (req, res) => {
 
 export const getAllUser =  async (req, res) => {
     try {
-        const data = await User.find({})
-        return res.status(200).json({ success: true, message: 'Get User Details...', data })
+
+        const search = req.query.search || '';
+        const page = req.query.page || 1;
+        const limit = req.query.limit || 5;
+        const skip = (page - 1) * limit;
+        const totalData = await Student.countDocuments();
+        const totalPage = Math.ceil(totalData / limit);
+
+        const data = await Student.find({
+            name: { $regex: search, $options: 'i' }
+        })
+            .skip(skip)
+            .limit(limit)
+            .sort({ name: 1 })  // 1 : Ascending sorting & -1 : Descending sorting
+        return res.status(200).json({ message: "Get All Users Details..", data, page, limit, totalData })
     } catch (error) {
         return res.status(400).json({ message: error.message })
     }
